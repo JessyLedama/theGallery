@@ -7,11 +7,11 @@
         <i class="fa fa-map-marker" aria-hidden="true"></i> {{ $flyer-> area}}
         <i> Posted </i> <b>{{ $flyer->created_at->diffForHumans() }}</b>
     </h6>
-    <h4 class="text-success">{{ $flyer->price }}</h4>
+    <!-- <h4 class="text-success">{{ $flyer->price }}</h4> -->
 
-    <div class="description">{{ nl2br($flyer->description) }}</div>
+    <!-- <div class="description">{{ nl2br($flyer->description) }}</div> -->
 
-    <div class="col-sm-12 my-3">
+    <div class="col-sm-12 md-3">
         @if(count($flyer->photo) == 0)
             <h4 class="mx-auto">No images for this listing</h4>
         @else

@@ -1,24 +1,34 @@
 @extends('layouts.app')
 
+
 @section('content')
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            @foreach ($listings as $listing)
-            <div class="col-sm-4">
-                @if (count($listing->photo) > 0)
-                <h4>
-                    <a href="{!! $listing->area !!}"> 
-                        <img src="/{{ $listing->photo->first()->thumbnail_path }}" alt=""/><br />
-                        {!! $listing-> area !!}
-                    </a>
-                </h4>
-                @else
-                    <img src="{{asset('img/home.png')}}" alt="" width="200px"/>
-                @endif
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>   
+<div class="row">
+    @foreach ($listings as $listing)
+        <a href="{!! $listing->area !!}">
+            <div class="card">
+                <div class="card-body">
+                    <div class="col-md-4">
+                        @if (count($listing->photo) > 0)
+                        <img src="/{{ $listing->photo->first()->thumbnail_path }}" alt=""/>
+                        <h4 class="card-details">
+                            <a  href="{!! $listing->area !!}"> 
+                                <br />
+                                {!! $listing-> area !!}
+                            </a> 
+                        </h4>
+                        @php
+                            $userId = $listing->user_id;
+                            $user = App\Models\User::select('name')->where('id', $userId)->first();
+                        @endphp
+                        <div>
+                            <p style="width:210px"><img class="p-pic" src="/{{ $listing->photo->first()->thumbnail_path }}" alt=""/> {!! $user->name !!} </p>
+                            <span>  </span>
+                        </div>
+                        @endif
+                    </div>
+                </div>
+            </div>  
+        </a>
+    @endforeach 
+</div>
 @endsection

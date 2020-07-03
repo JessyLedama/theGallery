@@ -8,7 +8,7 @@
         <div class="card-body">
             <form role="form" method="POST" action="/flyers" enctype="multipart/form-data">
                 @csrf
-
+ 
                 <div class="col-sm-8 mx-auto">
                     <div class="form-group">
                         <label>Gallery</label>

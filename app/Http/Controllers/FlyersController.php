@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Auth;
 use App\Models\Flyer;
 use App\Models\Photo;
+use App\Models\User;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests\FlyerRequest;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -25,11 +27,7 @@ class FlyersController extends Controller
     {
         $listings = Flyer::with('photo')->get();
 
-        if (count($listings)) {
-            return view('flyers.index', compact('listings'));
-        } else {
-            return "no photos to display!! Please create a new gallery";
-        }
+        return view('flyers.index', compact('listings'));
     }
 
     /**
@@ -138,5 +136,33 @@ class FlyersController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function profile(){
+        $user = Auth::user();
+
+        return view('profile', compact('user'));
+    }
+
+    public function editProfile()
+    {
+        $user = Auth::user();
+
+        return view('edit-profile', compact('user'));
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $userId = Auth::user();
+        
+        User::update([
+                'name' => $request->name,
+                'last_name' => $request->last_name,
+                'email' => $request->email
+            ]);
+
+        session()->flash('success', 'Profile has been updated.');
+
+        return back();
     }
 }

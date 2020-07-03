@@ -1,0 +1,22 @@
+/*!
+ * theGallery
+ * Copyright 2020 Jessy Ledama
+ * https://simitechnologies.co.ke/
+ */
+
+ .card-details{
+    width: 300px;
+ }
+
+ .card-body {
+     margin: 0 -120px -15px -26px !important;
+ }
+
+ .card{
+     margin-left: 15px;
+ }
+
+ .p-pic{
+    border-radius: 50%;
+    height: 35px;
+ }

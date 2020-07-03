@@ -11,10 +11,13 @@
 |
 */
 
-Auth::routes();
+Auth::routes(); 
 
 Route::get('/', 'FlyersController@index');
 Route::get('/listings', 'FlyersController@index');
+Route::get('/profile', 'FlyersController@profile');
+Route::get('/edit-profile', 'FlyersController@editProfile');
+Route::post('/updateProfile', 'FlyersController@updateProfile');
 
 Route::resource('flyers', 'FlyersController');
 
