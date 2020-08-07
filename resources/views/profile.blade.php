@@ -6,12 +6,14 @@
     <form method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4">
-                <div class="profile-img">
-                    <img src="/{{ $user->photo }}" alt=""/>
+                <div> 
+                    <i class="fa fa-pencil" >
+                        <img class="profile-pic" src="/{{ $user->photo }}" alt=""/>
+                    </i>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="profile-head">
+                <div class="profile-head"> 
                     <h5>
                         {!! $user->name !!}
                     </h5>

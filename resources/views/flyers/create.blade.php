@@ -10,9 +10,19 @@
                 @csrf
  
                 <div class="col-sm-8 mx-auto">
+                    <label>Gallery</label>
                     <div class="form-group">
-                        <label>Gallery</label>
-                        <input class="form-control" type="text" name="area" required placeholder="Gallery">
+                        
+                        <input class="form-control" type="text" name="area" required placeholder="Event Name">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="time" required placeholder="Time">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="venue" required placeholder="Venue">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="date" required placeholder="Date">
                     </div>
 
                     <button type="submit" class="btn btn-default">Save</button>

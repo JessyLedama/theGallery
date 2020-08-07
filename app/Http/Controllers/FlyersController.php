@@ -151,6 +151,13 @@ class FlyersController extends Controller
         return view('edit-profile', compact('user'));
     }
 
+    public function editPic()
+    {
+        $user = Auth::user();
+
+        return view('edit-pic', compact('user'));
+    }
+
     public function updateProfile(Request $request)
     {
         $userId = Auth::user();
@@ -162,6 +169,21 @@ class FlyersController extends Controller
             ]);
 
         session()->flash('success', 'Profile has been updated.');
+
+        return back();
+    }
+
+    public function updatePic(Request $request)
+    {
+        $userId = Auth::user();
+        
+        User::update([
+                'name' => $request->name,
+                'last_name' => $request->last_name,
+                'email' => $request->email
+            ]);
+
+        session()->flash('success', 'Profile picture has been updated.');
 
         return back();
     }

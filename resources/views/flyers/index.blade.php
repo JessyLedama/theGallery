@@ -21,7 +21,21 @@
                             $user = App\Models\User::select('name')->where('id', $userId)->first();
                         @endphp
                         <div>
-                            <p style="width:210px"><img class="p-pic" src="/{{ $listing->photo->first()->thumbnail_path }}" alt=""/> {!! $user->name !!} </p>
+                            <p style="width:210px">
+                                <img class="p-pic" src="/{{ $listing->photo->first()->thumbnail_path }}" alt=""/> {!! $user->name !!} 
+                            </p>
+
+                            <p class="flyer-summery">
+                                 {!! $listing->time !!} 
+                            </p>
+
+                            <p class="flyer-summery">
+                                 {!! $listing->venue !!} 
+                            </p>
+
+                            <p class="flyer-summery">
+                                 {!! $listing->date !!} 
+                            </p>
                             <span>  </span>
                         </div>
                         @endif

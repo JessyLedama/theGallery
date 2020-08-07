@@ -18,6 +18,8 @@ Route::get('/listings', 'FlyersController@index');
 Route::get('/profile', 'FlyersController@profile');
 Route::get('/edit-profile', 'FlyersController@editProfile');
 Route::post('/updateProfile', 'FlyersController@updateProfile');
+Route::get('/edit-profile-picture', 'FlyersController@editPic');
+Route::post('/update-profile-picture', 'FlyersController@updatePic');
 
 Route::resource('flyers', 'FlyersController');
 
