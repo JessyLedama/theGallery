@@ -26,3 +26,23 @@ Route::resource('flyers', 'FlyersController');
 Route::get('{area}', 'FlyersController@show');
 
 Route::post('{area}/photos', ['as' => 'store_photo_path', 'uses' => 'FlyersController@addPhoto']);
+
+Route::group(['middleware' => 'auth'], function(){
+    Route::get('download', function(){
+        
+        //fetching the GET request
+        $path = request('f');
+
+        //get file's extension
+        $extension = pathinfo($path, PATHINFO_EXTENSION);
+
+        //don't download these
+        $blocked = ['php', 'htaccess'];
+
+        //if the requested file is not in the blocked array
+        if (! in_array($extension, $blocked)) {
+            //download the file
+            return response()->download($path);
+        }
+    });
+});

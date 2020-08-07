@@ -8,15 +8,37 @@
     width: 300px;
  }
 
- .card-body {
-     margin: 0 -120px -15px -26px !important;
- }
+ .card-body-h {
+    margin: 0 -170px -15px -5px !important;
+}
 
  .card{
      margin-left: 15px;
+     width: 225px;
  }
 
  .p-pic{
     border-radius: 50%;
     height: 35px;
+ }
+
+ .flyer-summery{
+    width: 110%;
+    margin-left: 40px;
+ }
+
+ .cover{
+    margin-top: 10px;
+ }
+
+ .gallery-card{
+   width: 60%;
+   left: 20%;
+   border: 1px solid #ced4da;
+   border-radius: 5px;
+   margin-left: 20%;
+ }
+
+ .page-header{
+    margin-left: 35%;
  }
