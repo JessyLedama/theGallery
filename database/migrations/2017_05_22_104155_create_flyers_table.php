@@ -19,7 +19,7 @@ class CreateFlyersTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
-            $table->string('event-name');
+            $table->string('area');
             $table->string('time');
             $table->string('venue');
             $table->string('date');
